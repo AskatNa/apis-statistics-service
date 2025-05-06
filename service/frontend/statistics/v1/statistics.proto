@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package statistics.service.frontend.v1;
+
+option go_package = "github.com/AskatNa/apis-statistics-service/service/frontend/statistics/v1;statisticssvc";
+
+service StatisticsService {
+  rpc GetUserOrdersStatistics(UserOrderStatisticsRequest) returns (UserOrderStatisticsResponse);
+  rpc GetUserStatistics(UserStatisticsRequest) returns (UserStatisticsResponse);
+}
+
+message UserOrderStatisticsRequest {
+  string user_id = 1;
+}
+
+message UserOrderStatisticsResponse {
+  int32 total_orders = 1;
+  string most_active_hour = 2;
+  float average_order_value = 3;
+}
+
+message UserStatisticsRequest {
+  string user_id = 1;
+}
+
+message UserStatisticsResponse {
+  int32 total_orders = 1;
+  int32 total_products_viewed = 2;
+  int32 total_spent = 3;
+}
