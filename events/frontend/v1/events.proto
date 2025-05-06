@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package events.frontend.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/AskatNa/apis-statistics-service/events/frontend/v1;eventsv1";
+
+message OrderCreated {
+  string order_id = 1;
+  string user_id = 2;
+  float total_amount = 3;
+  google.protobuf.Timestamp created_at = 4;
+}
+
+message OrderUpdated {
+  string order_id = 1;
+  string user_id = 2;
+  string status = 3;
+  google.protobuf.Timestamp updated_at = 4;
+}
+
+message OrderDeleted {
+  string order_id = 1;
+}
+
+message ProductCreated {
+  string product_id = 1;
+  string name = 2;
+  float price = 3;
+}
+
+message ProductUpdated {
+  string product_id = 1;
+  string name = 2;
+  float price = 3;
+}
+
+message ProductDeleted {
+  string product_id = 1;
+}
