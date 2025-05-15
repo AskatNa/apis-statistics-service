@@ -9,7 +9,7 @@ option go_package = "github.com/AskatNa/apis-gen-statistics-service/base/fronten
 
 message Statistic {
   // client id
-  uint64 id = 1;
+  string id = 1;
   // orders count
   uint64 orders_count = 2;
   // orders message
