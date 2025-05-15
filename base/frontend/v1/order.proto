@@ -8,9 +8,9 @@ option go_package = "github.com/AskatNa/apis-gen-statistics-service/base/fronten
 
 message Order {
   // order id
-  uint64 id = 1;
+  string id = 1;
   // client id
-  uint64 client_id = 2;
+  string client_id = 2;
   // type
   OrderType type = 3;
   // sum
