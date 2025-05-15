@@ -11,8 +11,9 @@ service StatisticsService {
   rpc GetUserStatistics(UserStatisticsRequest) returns (UserStatisticsResponse);
 }
 
-message UserOrderStatisticsRequest {
-  int64 user_id = 1;
+message UserOrderStatisticsResponse {
+  int32 total_orders = 1;
+  map<string, int32> hourly_distribution = 2;
 }
 
 message UserOrderStatisticsResponse {
@@ -26,9 +27,10 @@ message UserStatisticsRequest {
 }
 
 message UserStatisticsResponse {
-  int32 total_orders = 1;
-  int32 total_products_viewed = 2;
-  int32 total_spent = 3;
+  int32 total_items_purchased = 1;
+  float average_order_value = 2;
+  string most_purchased_item = 3;
+  int32 total_completed_orders = 4;
 }
  message OrderEvent {
     int64 event_id = 1;
